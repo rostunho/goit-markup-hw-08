@@ -1,24 +1,32 @@
-.contacts__link,
-.contacts,
-.site-nav__list,
-.header__container {
+.contacts__link, .site-nav__list, .header__container {
   display: flex;
   align-items: center;
 }
+@media screen and (min-width: 768px) {
+  .contacts__link, .site-nav__list, .header__container {
+    display: flex;
+    align-items: center;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .contacts__link, .site-nav__list, .header__container {
+    display: flex;
+    align-items: center;
+  }
+}
 
-.site-nav__link,
-.header__mobile-menu-button {
+.mobile-contacts__link, .mobile-social-media__link, .mobile-nav__link, .contacts__link, .site-nav__link, .mobile-menu__close-button, .mobile-menu, .header__mobile-menu-button {
   transition-duration: 1250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .site-nav__link--current-page::after {
   -webkit-animation-name: fade-in;
-  animation-name: fade-in;
+          animation-name: fade-in;
   -webkit-animation-duration: 1250ms;
-  animation-duration: 1250ms;
+          animation-duration: 1250ms;
   -webkit-animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+          animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 @-webkit-keyframes fade-in {
   0% {
@@ -88,9 +96,15 @@ h3 {
 }
 
 .container {
-  max-width: 480px;
   padding: 0 15px;
   margin: 0 auto;
+  max-width: 100%;
+}
+@media screen and (min-width: 480px) {
+  .container {
+    max-width: 768px;
+    max-width: 480px;
+  }
 }
 @media screen and (min-width: 768px) {
   .container {
@@ -125,8 +139,7 @@ h3 {
   border: none;
   transition-property: color;
 }
-.header__mobile-menu-button:hover,
-.header__mobile-menu-button:focus {
+.header__mobile-menu-button:hover, .header__mobile-menu-button:focus {
   color: #2196f3;
 }
 @media screen and (min-width: 768px) {
@@ -162,12 +175,83 @@ h3 {
 @media screen and (min-width: 1200px) {
   .header__contacts {
     display: flex;
+    align-items: center;
     margin-left: auto;
   }
 }
 
-.header__link {
-  padding: 5px 0;
+.mobile-menu {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 30;
+  width: 100vw;
+  height: 100vh;
+  transform: translateX(100%);
+  transition-property: transform;
+  background-color: tomato;
+}
+.mobile-menu--is-open {
+  transform: translateX(0);
+}
+@media screen and (max-height: 500px) {
+  .mobile-menu {
+    height: 500px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .mobile-menu {
+    display: none;
+  }
+}
+
+.mobile-menu__container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  height: 100%;
+  padding: 0 40px;
+  background-color: lightgreen;
+}
+@media screen and (min-width: 480px) {
+  .mobile-menu__container {
+    width: 480px;
+    margin: 0 auto;
+  }
+}
+@media screen and (min-width: 768px) {
+  .mobile-menu__container {
+    display: none;
+  }
+}
+
+.mobile-menu__mobile-nav {
+  padding-top: 48px;
+  margin-bottom: 64px;
+}
+
+.mobile-menu__mobile-contacts {
+  margin-bottom: 64px;
+}
+
+.mobile-menu__connect {
+  padding-bottom: 48px;
+}
+
+.mobile-menu__close-button {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  padding: 11px;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  transition-property: color;
+}
+.mobile-menu__close-button:hover, .mobile-menu__close-button:focus {
+  color: #2196f3;
 }
 
 .logo {
@@ -210,8 +294,7 @@ h3 {
   letter-spacing: 0.02em;
   transition-property: color;
 }
-.site-nav__link:hover,
-.site-nav__link:focus {
+.site-nav__link:hover, .site-nav__link:focus {
   color: #2196f3;
 }
 
@@ -230,13 +313,14 @@ h3 {
   background-color: #2196f3;
 }
 
-.contacts--vertical {
-  display: block;
+@media screen and (min-width: 768px) {
+  .contacts__item:not(:first-child) {
+    margin: 10px 0 0 0;
+  }
 }
-
 @media screen and (min-width: 1200px) {
   .contacts__item:not(:first-child) {
-    margin-left: 30px;
+    margin: 0 0 0 30px;
   }
 }
 
@@ -247,6 +331,10 @@ h3 {
   text-align: left;
   letter-spacing: 0.02em;
   color: #757575;
+  transition-property: color;
+}
+.contacts__link:hover, .contacts__link:focus {
+  color: #2196f3;
 }
 @media screen and (min-width: 1200px) {
   .contacts__link {
@@ -268,10 +356,92 @@ h3 {
 }
 
 .contacts__icon--desktop {
+  display: none;
   margin-right: 10px;
 }
-@media screen and (max-width: 1199.5px) {
+@media screen and (min-width: 1200px) {
   .contacts__icon--desktop {
-    display: none;
+    display: block;
   }
-} /*# sourceMappingURL=main.css.map */
+}
+
+.mobile-nav__link {
+  font-weight: 500;
+  font-size: 40px;
+  line-height: 1.175;
+  text-align: left;
+  letter-spacing: 0.02em;
+  color: #000000;
+  transition-property: color;
+}
+.mobile-nav__link:hover, .mobile-nav__link:focus {
+  color: #2196f3;
+}
+
+.mobile-nav__item:not(:last-child) {
+  margin-bottom: 32px;
+}
+
+.mobile-social-media {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -10px;
+}
+
+.mobile-social-media__link {
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 1.222;
+  text-align: center;
+  letter-spacing: 0.02em;
+  color: #2196f3;
+  transition-property: color;
+}
+.mobile-social-media__link:hover, .mobile-social-media__link:focus {
+  color: #757575;
+}
+
+.mobile-social-media__item {
+  margin-left: 10px;
+  margin-bottom: 10px;
+}
+.mobile-social-media__item:not(:last-child) {
+  padding-right: 10px;
+}
+.mobile-social-media__item:not(:last-child) {
+  border-right: 1px solid rgba(33, 33, 33, 0.2);
+}
+
+.mobile-contacts__item {
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 1.167;
+  text-align: left;
+  letter-spacing: 0.02em;
+  color: #757575;
+}
+.mobile-contacts__item:first-child {
+  font-weight: 500;
+  font-size: 34px;
+  line-height: 1.176;
+  text-align: left;
+  letter-spacing: 0.02em;
+  color: #2196f3;
+  margin-bottom: 32px;
+}
+@media screen and (max-width: 380px) {
+  .mobile-contacts__item:first-child {
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 1.167;
+    text-align: left;
+    letter-spacing: 0.02em;
+  }
+}
+
+.mobile-contacts__link {
+  transition-property: color;
+}
+.mobile-contacts__link:hover, .mobile-contacts__link:focus {
+  color: #2196f3;
+}/*# sourceMappingURL=main.css.map */
