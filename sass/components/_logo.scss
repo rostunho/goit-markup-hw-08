@@ -1,0 +1,22 @@
+.logo {
+  display: block;
+
+  font-family: "Raleway";
+  @include font(700, 24px, 1.167);
+
+  color: $accentColor;
+
+  &__second-half {
+    color: $altTextColor;
+  }
+
+  @media screen and (min-width: 1200px) {
+    @include font(700, 26px, 1.192);
+  }
+}
+
+.logo--invert {
+  .logo__second-half {
+    color: $secondaryTextColor;
+  }
+}
