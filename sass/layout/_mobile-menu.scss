@@ -12,7 +12,7 @@
   transition-property: transform;
   @extend %smoothTransition;
 
-  background-color: tomato;
+  background-color: transparent;
 
   &--is-open {
     transform: translateX(0);
@@ -39,8 +39,7 @@
 
   padding: 0 40px;
 
-  background-color: lightgreen;
-  //   background-color: $primaryBgColor;
+  background-color: $primaryBgColor;
 
   @media screen and (min-width: 480px) {
     width: 480px;
