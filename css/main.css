@@ -1281,8 +1281,9 @@ h3 {
 
 .modal__input--textarea {
   padding: 11px 16px;
-  resize: none;
   margin-bottom: 20px;
+  height: 120px;
+  resize: none;
   letter-spacing: 0.01em;
 }
 .modal__input--textarea::-moz-placeholder {
@@ -1294,8 +1295,14 @@ h3 {
 .modal__input--textarea::placeholder {
   color: rgba(117, 117, 117, 0.5);
 }
+@media screen and (max-width: 450px) {
+  .modal__input--textarea {
+    height: 60px;
+  }
+}
 
 .modal__contract {
+  flex-wrap: wrap;
   margin-bottom: 30px;
 }
 
