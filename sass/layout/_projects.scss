@@ -1,21 +1,7 @@
-// .projects {
-//   @extend %sectionVerticalCentring;
-// }
-
 .projects {
   padding: 60px 0;
   @media screen and (min-width: 1200px) {
     padding: 94px 0;
-  }
-}
-.projects__filter {
-  margin-bottom: 40px;
-
-  @media screen and (min-width: 768px) {
-    margin-bottom: 30px;
-  }
-  @media screen and (min-width: 1200px) {
-    margin-bottom: 50px;
   }
 }
 
