@@ -1,42 +1,58 @@
-// .clients {
-//   @extend %sectionVerticalCentring;
-//   text-align: center;
-// }
+.clients {
+  padding: 60px 0;
 
-// .clients__section-title {
-//   @extend %sectionTitle;
-// }
+  @media screen and(min-width: 1200px) {
+    padding: 94px 0;
+  }
+}
 
-// .clients__list {
-//   @extend %flexCentring;
-// }
+.clients__section-title {
+  @extend %sectionTitleSmall;
 
-// .clients__item {
-//   width: 170px;
-//   height: 92px;
+  @media screen and(min-width: 1200px) {
+    font-size: 36px;
+    line-height: 1.167;
 
-//   &:not(:first-child) {
-//     @extend %inboxSpace;
-//   }
-// }
+    margin: 0 0 50px 0;
+  }
+}
 
-// .clients__link {
-//   @extend %flexCentring;
+.clients__list {
+  display: flex;
+  flex-wrap: wrap;
 
-//   width: 100%;
-//   height: 100%;
+  margin: 0 0 -30px -30px;
+}
 
-//   color: $primaryIconColor;
+.clients__item {
+  height: 92px;
+  flex-basis: calc((100% - 60px) / 2);
+  margin: 0 0 30px 30px;
 
-//   border: 1px solid $primaryIconColor;
-//   border-radius: 4px;
+  @media screen and (min-width: 768px) {
+    flex-basis: calc((100% - 90px) / 3);
+  }
 
-//   transition-property: color, border-color;
-//   @extend %smoothTransition;
+  @media screen and (min-width: 1200px) {
+    flex-basis: calc((100% - 180px) / 6);
+  }
+}
 
-//   &:hover,
-//   &:focus {
-//     color: $accentColor;
-//     border-color: $accentColor;
-//   }
-// }
+.clients__link {
+  @extend %flexCentring;
+
+  height: 100%;
+
+  color: $primaryIconColor;
+  border: 1px solid $primaryIconColor;
+  border-radius: 4px;
+
+  transition-property: color, border-color;
+  @extend %smoothTransition;
+
+  &:hover,
+  &:focus {
+    color: $accentColor;
+    border-color: $accentColor;
+  }
+}

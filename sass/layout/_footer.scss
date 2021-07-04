@@ -1,15 +1,31 @@
-// .footer {
-//   background-color: $altBgColor;
-// }
+.footer {
+  padding: 60px 0;
 
-// .footer__container {
-//   display: flex;
-// }
+  background-color: $altBgColor;
+}
 
-// .footer__section-title {
-//   @extend %sectionTitle;
+.footer__container {
+  @media screen and(min-width: 768px) {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
 
-//   &--hidded {
-//     @extend %visuallyHidden;
-//   }
-// }
+.footer__section-title {
+  @extend %sectionTitle;
+
+  &--hidded {
+    @extend %visuallyHidden;
+  }
+}
+
+.footer__contacts {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.footer__iconset {
+  @media screen and (min-width: 1200px) {
+    justify-content: start;
+  }
+}
