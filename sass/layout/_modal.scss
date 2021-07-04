@@ -1,214 +1,237 @@
-// .modal {
-//   position: fixed;
-//   left: 0;
-//   top: 0;
-//   z-index: 30;
+.modal {
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 40;
 
-//   width: 100vw;
-//   height: 100vh;
+  width: 100vw;
+  height: 100vh;
 
-//   opacity: 1;
-//   visibility: visible;
+  opacity: 1;
+  visibility: visible;
 
-//   background-color: rgba(0, 0, 0, 0.2);
+  background-color: rgba(0, 0, 0, 0.2);
 
-//   transition-property: opacity, visibility;
-//   @extend %smoothTransition;
+  transition-property: opacity, visibility;
+  @extend %smoothTransition;
 
-//   &--is-hidden {
-//     opacity: 0;
-//     visibility: hidden;
-//     pointer-events: none;
+  &--is-hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
 
-//     & .modal__form {
-//       transform: translate(-50%, -50%) scale(0.95);
-//     }
-//   }
-// }
+    & .modal__form {
+      transform: translate(-50%, -50%) scale(0.95);
+    }
+  }
+}
 
-// .modal__form {
-//   position: absolute;
-//   left: 50%;
-//   top: 50%;
-//   z-index: 40;
+.modal__form {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  z-index: 50;
 
-//   min-width: 528px;
-//   min-height: 581px;
-//   transform: translate(-50%, -50%) scale(1);
-//   padding: 40px;
+  width: 450px;
 
-//   transition-property: transform;
-//   @extend %smoothTransition;
+  transform: translate(-50%, -50%) scale(1);
 
-//   background-color: $primaryBgColor;
-//   border-radius: 4px;
-//   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
-//     0px 2px 1px rgba(0, 0, 0, 0.2);
-// }
+  padding: 40px;
 
-// .modal__close-button {
-//   position: absolute;
-//   top: 8px;
-//   right: 8px;
+  transition-property: transform;
+  @extend %smoothTransition;
 
-//   width: 30px;
-//   height: 30px;
-//   border-radius: 50%;
+  background-color: $primaryBgColor;
+  border-radius: 4px;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
 
-//   @extend %flexCentring;
+  @media screen and (min-width: 1200px) {
+    width: 528px;
+  }
 
-//   cursor: pointer;
-//   background-color: transparent;
-//   border: 1px solid rgba(0, 0, 0, 0.1);
+  @media screen and (max-width: 450px) {
+    max-width: 320px;
+    padding: 40px 20px;
+  }
+}
 
-//   &:hover,
-//   &:focus {
-//     & .modal__cross {
-//       color: $accentColor;
-//     }
-//   }
-// }
+.modal__close-button {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  z-index: 50;
 
-// .modal__cross {
-//   color: $altTextColor;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
 
-//   transition-property: color;
-//   @extend %smoothTransition;
-// }
+  @extend %flexCentring;
 
-// .modal__title {
-//   display: block;
-//   margin-bottom: 12px;
+  cursor: pointer;
+  background-color: transparent;
+  border: 1px solid rgba(0, 0, 0, 0.1);
 
-//   font-size: 20px;
-//   line-height: 1.15;
-//   text-align: center;
-// }
+  &:hover,
+  &:focus {
+    & .modal__cross {
+      color: $accentColor;
+    }
+  }
+}
 
-// .modal__label {
-//   display: inline-block;
-//   margin-bottom: 4px;
+.modal__cross {
+  color: $altTextColor;
 
-//   font-size: 12px;
-//   line-height: 1.167;
-//   letter-spacing: 0.01em;
-//   color: $primaryTextColor;
-//   &:hover + .modal__form-field {
-//     .modal__icon {
-//       color: $accentColor;
-//     }
-//   }
-// }
+  transition-property: color;
+  @extend %smoothTransition;
+}
 
-// .modal__form-field {
-//   position: relative;
-//   @extend %flexVerticalCentring;
-//   margin-bottom: 10px;
+.modal__title {
+  display: block;
+  margin-bottom: 12px;
 
-//   &:hover,
-//   &:focus-within {
-//     & .modal__icon {
-//       color: $accentColor;
-//     }
-//   }
-// }
+  font-size: 20px;
+  line-height: 1.5;
+  text-align: center;
 
-// .modal__icon {
-//   position: absolute;
-//   left: 12px;
-//   color: var(--title-text-color);
-//   pointer-events: none;
-//   color: $titleColor;
+  @media screen and (min-width: 1200px) {
+    line-height: 1.15;
+  }
+}
 
-//   transition-property: color;
-//   @extend %smoothTransition;
-// }
+.modal__label {
+  //   display: inline-block;
+  margin-bottom: 4px;
 
-// .modal__input {
-//   width: 100%;
-//   min-height: 40px;
-//   padding-left: 42px;
-//   padding-right: 42px;
+  font-size: 12px;
+  line-height: 1.167;
+  letter-spacing: 0.01em;
+  color: $primaryTextColor;
+  &:hover + .modal__form-field {
+    .modal__icon {
+      color: $accentColor;
+    }
+  }
+}
 
-//   background-color: transparent;
-//   border: 1px solid $inputBorderColor;
-//   border-radius: 4px;
-//   outline-color: transparent;
-//   cursor: pointer;
+.modal__form-field {
+  position: relative;
+  @extend %flexVerticalCentring;
+  margin-bottom: 10px;
 
-//   transition-property: border, outline-color;
-//   @extend %smoothTransition;
+  &:hover,
+  &:focus-within {
+    & .modal__icon {
+      color: $accentColor;
+    }
+  }
+}
 
-//   &:hover {
-//     border: 1px solid $accentColor;
-//   }
+.modal__icon {
+  position: absolute;
+  left: 12px;
+  color: var(--title-text-color);
+  pointer-events: none;
+  color: $titleColor;
 
-//   &:focus {
-//     outline-color: $accentColor;
-//   }
-// }
+  transition-property: color;
+  @extend %smoothTransition;
+}
 
-// .modal__input--textarea {
-//   padding: 11px 16px;
-//   resize: none;
-//   margin-bottom: 20px;
+.modal__input {
+  width: 100%;
+  min-height: 40px;
+  padding-left: 42px;
+  padding-right: 42px;
 
-//   letter-spacing: 0.01em;
+  background-color: transparent;
+  border: 1px solid $inputBorderColor;
+  border-radius: 4px;
+  outline-color: transparent;
+  cursor: pointer;
 
-//   &::placeholder {
-//     color: rgba(117, 117, 117, 0.5);
-//   }
-// }
+  transition-property: border, outline-color;
+  @extend %smoothTransition;
 
-// .modal__contract {
-//   @extend %flexCentring;
-//   margin-bottom: 30px;
-// }
+  &:hover {
+    border: 1px solid $accentColor;
+  }
 
-// .modal__check-icon {
-//   color: transparent;
-//   border: 2px solid $titleColor;
-//   border-radius: 2px;
-//   cursor: pointer;
+  &:focus {
+    outline-color: $accentColor;
+  }
+}
 
-//   transition-property: color, background-color, border;
-//   @extend %smoothTransition;
-// }
+.modal__input--textarea {
+  padding: 11px 16px;
+  resize: none;
+  margin-bottom: 20px;
 
-// .modal__checkbox {
-//   &--hidded {
-//     @extend %visuallyHidden;
-//   }
-// }
+  letter-spacing: 0.01em;
 
-// .modal__checkbox {
-//   &:checked + .modal__check-icon {
-//     color: $secondaryTextColor;
-//     background-color: $accentColor;
-//     border: none;
-//   }
+  &::placeholder {
+    color: rgba(117, 117, 117, 0.5);
+  }
+}
 
-//   &:hover,
-//   &:focus {
-//     & + .modal__check-icon {
-//       border-color: $accentColor;
-//     }
-//   }
-// }
+.modal__contract {
+  @extend %flexCentring;
+  margin-bottom: 30px;
+}
 
-// .modal__custom-checkbox {
-//   @extend %flexVerticalCentring;
-//   margin-right: 8px;
-// }
+.modal__check-icon {
+  color: transparent;
+  border: 2px solid $titleColor;
+  border-radius: 2px;
+  cursor: pointer;
 
-// .modal__text {
-//   margin-right: 0.25em;
-//   @include fontSmall(400, 14px, 1.714);
-//   color: $primaryTextColor;
-// }
+  transition-property: color, background-color, border;
+  @extend %smoothTransition;
+}
 
-// .modal__link {
-//   line-height: 1.714;
-//   text-decoration: underline;
-//   color: $accentColor;
-// }
+.modal__checkbox {
+  &--hidded {
+    @extend %visuallyHidden;
+  }
+}
+
+.modal__checkbox {
+  &:checked + .modal__check-icon {
+    color: $secondaryTextColor;
+    background-color: $accentColor;
+    border: none;
+  }
+
+  &:hover,
+  &:focus {
+    & + .modal__check-icon {
+      border-color: $accentColor;
+    }
+  }
+}
+
+.modal__custom-checkbox {
+  @extend %flexVerticalCentring;
+  margin-right: 8px;
+}
+
+.modal__text {
+  margin-right: 0.25em;
+  @include fontSmall(400, 12px, 1.167);
+  color: $primaryTextColor;
+
+  @media screen and (min-width: 1200px) {
+    @include fontSmall(400, 14px, 1.714);
+  }
+}
+
+.modal__link {
+  @include fontSmall(400, 12px, 1.167);
+  text-decoration: underline;
+  color: $accentColor;
+
+  @media screen and (min-width: 1200px) {
+    @include fontSmall(400, 14px, 1.714);
+  }
+}

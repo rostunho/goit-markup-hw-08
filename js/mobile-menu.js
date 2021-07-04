@@ -9,6 +9,6 @@
   refs.closeMenuBtn.addEventListener('click', toggleMenu);
 
   function toggleMenu() {
-    refs.menu.classList.toggle('mobile-menu--is-hidden');
+    refs.menu.classList.toggle('mobile-menu--is-open');
   }
 })();
