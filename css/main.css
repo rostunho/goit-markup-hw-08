@@ -53,7 +53,7 @@
   text-align: center;
 }
 
-.mobile-menu__close-button, .mobile-menu, .modal__check-icon, .modal__input, .modal__icon, .modal__cross, .modal__form, .modal, .clients__link, .header__mobile-menu-button, .mobile-contacts__link, .mobile-social-media__link, .mobile-nav__link, .subscribe__input, .cardset__link, .cardset__dropup, .filter__button, .iconset__link, .button, .contacts__link, .site-nav__link {
+.mobile-menu__close-button, .modal__check-icon, .modal__input, .modal__icon, .modal__cross, .modal__form, .modal, .clients__link, .header__mobile-menu-button, .mobile-contacts__link, .mobile-social-media__link, .mobile-nav__link, .subscribe__input, .cardset__link, .cardset__dropup, .filter__button, .iconset__link, .button, .contacts__link, .site-nav__link {
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -801,7 +801,7 @@ h3 {
 .hero {
   height: 400px;
   background-repeat: no-repeat;
-  background-size: 480px 400px;
+  background-size: cover;
   background-position: center;
   background-image: linear-gradient(rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url("..//..//images/backgrounds/mobbg-teamwork@1x.jpg");
 }
@@ -821,20 +821,23 @@ h3 {
     background-image: linear-gradient(rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url("..//..//images/backgrounds/mobbg-teamwork@3x.jpg");
   }
 }
-@media screen and (min-device-pixel-ratio: 1) and (min-width: 768px), screen and (-webkit-min-device-pixel-ratio: 1) and (min-width: 768px), screen and (min-resolution: 96dpi) and (min-width: 768px), screen and (min-resolution: 1dppx) and (min-width: 768px) {
+@media screen and (min-device-pixel-ratio: 1) and (min-width: 481px), screen and (-webkit-min-device-pixel-ratio: 1) and (min-width: 481px), screen and (min-resolution: 96dpi) and (min-width: 481px), screen and (min-resolution: 1dppx) and (min-width: 481px) {
   .hero {
+    background-position: center;
     background-size: 768px 400px;
     background-image: linear-gradient(rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url("..//..//images/backgrounds/tabbg-teamwork@1x.jpg");
   }
 }
-@media screen and (min-device-pixel-ratio: 2) and (min-width: 768px), screen and (-webkit-min-device-pixel-ratio: 2) and (min-width: 768px), screen and (min-resolution: 192dpi) and (min-width: 768px), screen and (min-resolution: 2dppx) and (min-width: 768px) {
+@media screen and (min-device-pixel-ratio: 2) and (min-width: 481px), screen and (-webkit-min-device-pixel-ratio: 2) and (min-width: 481px), screen and (min-resolution: 192dpi) and (min-width: 481px), screen and (min-resolution: 2dppx) and (min-width: 481px) {
   .hero {
+    background-position: center;
     background-size: 768px 400px;
     background-image: linear-gradient(rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url("..//..//images/backgrounds/tabbg-teamwork@2x.jpg");
   }
 }
-@media screen and (min-device-pixel-ratio: 3) and (min-width: 768px), screen and (-webkit-min-device-pixel-ratio: 3) and (min-width: 768px), screen and (min-resolution: 288dpi) and (min-width: 768px), screen and (min-resolution: 3dppx) and (min-width: 768px) {
+@media screen and (min-device-pixel-ratio: 3) and (min-width: 481px), screen and (-webkit-min-device-pixel-ratio: 3) and (min-width: 481px), screen and (min-resolution: 288dpi) and (min-width: 481px), screen and (min-resolution: 3dppx) and (min-width: 481px) {
   .hero {
+    background-position: center;
     background-size: 768px 400px;
     background-image: linear-gradient(rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url("..//..//images/backgrounds/tabbg-teamwork@3x.jpg");
   }
@@ -1369,8 +1372,12 @@ h3 {
   width: 100vw;
   height: 100vh;
   background-color: #ffffff;
-  transform: translateX(100vh);
+  transform: translateX(100vw);
   transition-property: transform;
+  -webkit-animation-duration: 250ms;
+          animation-duration: 250ms;
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
 }
 @media screen and (max-width: 320px) {
   .mobile-menu {
