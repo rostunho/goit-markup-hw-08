@@ -1374,15 +1374,8 @@ h3 {
   background-color: #ffffff;
   transform: translateX(100vw);
   transition-property: transform;
-  -webkit-animation-duration: 250ms;
-          animation-duration: 250ms;
-  -webkit-animation-timing-function: linear;
-          animation-timing-function: linear;
-}
-@media screen and (max-width: 320px) {
-  .mobile-menu {
-    width: 320px;
-  }
+  transition-duration: 0ms;
+  transition-timing-function: linear;
 }
 @media screen and (min-width: 768px) {
   .mobile-menu {
@@ -1391,6 +1384,9 @@ h3 {
 }
 .mobile-menu--is-open {
   transform: translateX(0);
+  transition-property: transform;
+  transition-duration: 250ms;
+  transition-timing-function: linear;
 }
 
 .mobile-menu__container {

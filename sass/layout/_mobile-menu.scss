@@ -10,19 +10,19 @@
 
   transform: translateX(100vw);
   transition-property: transform;
-  // @extend %smoothTransition;
-  animation-duration: 250ms;
-  animation-timing-function: linear;
+  transition-duration: 0ms;
+  transition-timing-function: linear;
 
-  @media screen and(max-width:320px) {
-    width: 320px;
-  }
   @media screen and(min-width:768px) {
     display: none;
   }
 
   &--is-open {
     transform: translateX(0);
+
+    transition-property: transform;
+    transition-duration: 250ms;
+    transition-timing-function: linear;
   }
 }
 
