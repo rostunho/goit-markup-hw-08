@@ -53,7 +53,7 @@
   text-align: center;
 }
 
-.mobile-menu__close-button, .modal__check-icon, .modal__input, .modal__icon, .modal__cross, .modal__form, .modal, .clients__link, .header__mobile-menu-button, .mobile-contacts__link, .mobile-social-media__link, .mobile-nav__link, .subscribe__input, .cardset__link, .cardset__dropup, .filter__button, .iconset__link, .button, .contacts__link, .site-nav__link {
+.mobile-menu__close-button, .mobile-menu, .modal__check-icon, .modal__input, .modal__icon, .modal__cross, .modal__form, .modal, .clients__link, .header__mobile-menu-button, .mobile-contacts__link, .mobile-social-media__link, .mobile-nav__link, .subscribe__input, .cardset__link, .cardset__dropup, .filter__button, .iconset__link, .button, .contacts__link, .site-nav__link {
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -1372,10 +1372,8 @@ h3 {
   width: 100vw;
   height: 100vh;
   background-color: #ffffff;
-  transform: translateX(100vw);
+  transform: translateX(100%);
   transition-property: transform;
-  transition-duration: 0ms;
-  transition-timing-function: linear;
 }
 @media screen and (min-width: 768px) {
   .mobile-menu {
@@ -1384,9 +1382,6 @@ h3 {
 }
 .mobile-menu--is-open {
   transform: translateX(0);
-  transition-property: transform;
-  transition-duration: 250ms;
-  transition-timing-function: linear;
 }
 
 .mobile-menu__container {
